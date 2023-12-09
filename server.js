@@ -31,6 +31,7 @@ const getImage = async (prompt) => {
     
     try {
         const response = await axios.request(options);
+         return response.data.results.images[0];
         console.log(response.data);
     } catch (error) {
         console.error(error);
