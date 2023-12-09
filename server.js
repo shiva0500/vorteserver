@@ -16,22 +16,22 @@ const getImage = async (prompt) => {
     const axios = require('axios');
 
     const options = {
-        method: 'POST',
-        url: 'https://ai-image-generator3.p.rapidapi.com/generate',
-        headers: {
-            'content-type': 'application/json',
-            'X-RapidAPI-Key': '02c547945amsh56bca4545ab44f2p15a57cjsna1a38178ef5c',
-            'X-RapidAPI-Host': 'ai-image-generator3.p.rapidapi.com'
-        },
-        data: {
-            prompt: prompt,
-            page: 1
-        }
+      method: 'POST',
+      url: 'https://ai-image-generator3.p.rapidapi.com/generate',
+      headers: {
+        'content-type': 'application/json',
+        'X-RapidAPI-Key': '9d0ae3605emshc4cac6c9415fd8dp103edbjsn2564857574da',
+        'X-RapidAPI-Host': 'ai-image-generator3.p.rapidapi.com'
+      },
+      data: {
+        prompt: prompt,
+        page: 1
+      }
     };
-
+    
     try {
         const response = await axios.request(options);
-        return response.data.results.images[0];
+        console.log(response.data);
     } catch (error) {
         console.error(error);
     }
